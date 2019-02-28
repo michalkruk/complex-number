@@ -5,11 +5,18 @@ import java.util.Objects;
 public class Complex {
     private final double re;   // the real part
     private final double im;   // the imaginary part
+    private double fi;
 
     // create a new object with the given real and imaginary parts
     public Complex(double real, double imag) {
         re = real;
         im = imag;
+    }
+
+    public Complex(double real, double imag, double fi) {
+        re = real;
+        im = imag;
+        this.fi = fi;
     }
 
     // return a string representation of the invoking Complex object
@@ -96,6 +103,18 @@ public class Complex {
     // return a new Complex object whose value is the complex tangent of this
     public Complex tan() {
         return sin().divides(cos());
+    }
+
+    public double trigonometryFormCos(double fi){
+        return Math.cos(fi);
+    }
+
+    public double trigonometryFormSin( double fi){
+        return Math.sin(fi);
+    }
+
+    public double fi(){
+        return Math.atan(this.im/this.re);
     }
 
 
